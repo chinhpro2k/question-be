@@ -36,7 +36,7 @@ router.post("/add", async (req, res) => {
     res.send("error");
   }
 });
-router.get("/report", async (req, res) => {
+router.post("/report", async (req, res) => {
     const userId=req.body.userId;
     console.log("userID",userId);
     const spends=await Spend.find({userId:userId});
