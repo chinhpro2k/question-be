@@ -41,7 +41,6 @@ router.get("/report", async (req, res) => {
     console.log("userID",userId);
     const spends=await Spend.find({userId:userId});
 
-
     console.log(spends);
     return res.status(200).json({ spends });
   });
