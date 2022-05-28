@@ -5,6 +5,7 @@ const router = express.Router();
 //get list question
 router.get("/",async(req,res)=>{
     const question=await Question.find({});
+    console.log(question)
     return res.status(200).json({ question })
 })
 //create question

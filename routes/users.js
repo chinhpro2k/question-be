@@ -17,7 +17,7 @@ router.post('/register', async (req, res) => {
         await User.create(user);
         res.status(201).json({
             message: "Dang ky thanh cong.",
-            email: user.email
+            user: user
         });
 
     } catch (e) {
@@ -40,7 +40,11 @@ router.post('/login', async (req, res) => {
         } else {
             if (password == user.password) {
                 res.send({
-                    user
+                    firstName:user.firstName,
+                    lastName:user.lastName,
+                    password:user.password,
+                    email:user.email,
+                    id:user._id
                 });
             }else {
                 // res.send("Sai mat khau");
